@@ -1,0 +1,81 @@
+.main {
+    height: calc(100vh - 60px);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* Login ve Kayıt Sayfası Stil */
+.container {
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    background-color: var(--color-tertiary);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-dark); /* Başlık için koyu renk */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--color-dark); /* Yazı rengi için koyu ton */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-secondary); /* Gri tonlu kenarlık */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary); /* Fokus rengini altın yapalım */
+    box-shadow: 0 0 4px var(--color-primary);
+}
+
+.btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text-light); /* Beyaz metin */
+    background-color: var(--color-primary); /* Altın rengi */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-hover); /* Hover rengini biraz daha sıcak yapalım */
+}
+
+.toggle-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: white;
+}
+
+.toggle-link a {
+    color: var(--color-primary); /* Altın rengi */
+    cursor: pointer;
+}
+
+.toggle-link a:hover {
+    text-decoration: underline;
+}

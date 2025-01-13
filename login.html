@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Giriş ve Kayıt</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- Mobile Specific CSS -->
+    <link rel="stylesheet" href="css/mobile.css" media="only screen and (max-width: 768px)">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- NavBar -->
+        <nav class="navbar">
+            <h1>Değerli Maden Yön Tahmini</h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="whous.html">Hakkımızda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+        <!-- Login & Register Forms -->
+        <div class="container">
+            <!-- Login Form -->
+            <form id="login-form">
+                <h2>Giriş Yap</h2>
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+                </div>
+                <button type="submit" class="btn">Giriş Yap</button>
+                <div class="toggle-link">
+                    <p>Hesabınız yok mu? <a href="#" id="show-register">Kayıt Ol</a></p>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" style="display: none;">
+                <h2>Kayıt Ol</h2>
+                <div class="form-group">
+                    <label for="new-email">E-posta</label>
+                    <input type="email" id="new-email" name="new-email" placeholder="E-posta adresinizi girin" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Şifre</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Şifrenizi oluşturun" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Şifre Onayı</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Şifrenizi tekrar girin" required>
+                </div>
+                <button type="submit" class="btn">Kayıt Ol</button>
+                <div class="toggle-link">
+                    <p>Hesabınız var mı? <a href="#" id="show-login">Giriş Yap</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu toggle function
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+        const showRegisterLink = document.getElementById("show-register");
+        const showLoginLink = document.getElementById("show-login");
+
+        showRegisterLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginForm.style.display = "none";
+            registerForm.style.display = "block";
+        });
+
+        showLoginLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            registerForm.style.display = "none";
+            loginForm.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>

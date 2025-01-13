@@ -1,0 +1,63 @@
+/* Genel mobil stil ayarları */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column; /* Ekran daraldığında navbar öğelerini dikey hizala */
+        padding: 1rem; /* Daha geniş padding */
+        height: auto; /* Yükseklik otomatik olsun */
+    }
+
+    .navbar h1 {
+        font-size: 1.5rem; /* Başlık font boyutunu küçült */
+        margin-bottom: 1rem; /* Başlık ile menü arasında boşluk bırak */
+        text-align: center; /* Başlığı ortala */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Menü öğelerini dikey hizala */
+        width: 100%; /* Menü öğelerini tam genişlikte tut */
+        padding-left: 0;
+        display: none; /* Menü öğelerini gizle */
+        text-align: center; /* Menü öğelerini ortala */
+    }
+
+    .navbar ul li {
+        width: 100%; /* Menü öğeleri tam genişlikte olsun */
+    }
+
+    .navbar ul li a {
+        padding: 1rem; /* Menü öğeleri için yeterli padding */
+        font-size: 1.2rem; /* Font boyutunu büyüt */
+        display: block; /* Linkleri blok yaparak tıklanabilir alanı artır */
+        color: white; /* Link rengi beyaz */
+        text-decoration: none; /* Link altı çizgisi kaldır */
+    }
+
+    .navbar ul li a:hover {
+        background-color: var(--color-hover); /* Hover durumunda arkaplan değişimi */
+        border-radius: 20px; /* Köşe yuvarlama */
+    }
+
+    /* Hamburger menü */
+    .navbar .menu-icon {
+        display: block; /* Menü ikonunu göster */
+        cursor: pointer; /* İkonu tıklanabilir yap */
+        text-align: center; /* İkonu ortala */;
+    }
+
+    /* Menü ikonunun görsel düzeni */
+    .menu-icon i {
+        font-size: 2rem; /* İkon boyutunu büyüt */
+        color: var(--color-text);
+    }
+
+    /* Navbar aktif durumunda menüyü göster */
+    .navbar.active ul {
+        display: block; /* Navbar açıldığında menüyü göster */
+    }
+}
+
+/* Hamburger menü için aktif durum */
+.navbar.active .menu-icon i {
+    transform: rotate(90deg); /* Menü açıldığında ikonu döndür */
+}
